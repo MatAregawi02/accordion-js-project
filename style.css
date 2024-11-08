@@ -1,5 +1,6 @@
 html{
     box-sizing: border-box;
+    
 }
 *{
     padding : 0;
@@ -16,6 +17,7 @@ body{
 }
 main{
     display : flex;
+    
     /* gap : 87.16px; */ /* we don't need gap because widths are already set*/
   
     background-color: #FFFF;
@@ -32,30 +34,43 @@ main{
     background-image: url("images/bg-pattern-desktop.svg");
     background-repeat: no-repeat;
     background-position: -576px -294px;
+    border-radius: 23px;
+    padding-bottom: 19px;
 }
 
 
 .image__wrapper__inner{
-   
+    
     width: 472px;
     height: 429px;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
     background-image: url("/images/illustration-woman-online-desktop.svg");
     background-repeat: no-repeat;
     background-position: -84px 70px;
     /* margin-top: 70px; */
 
 }
-.at__box{
+.svg__container{
     position : absolute;
     width: 89.355px;
     height: 105.661px;
-    /* flex-shrink: 0; */
-    left : -42.07px;
-    top : 226.13px;
+    
+    
+    right : 872.71px;
+    top : 206.13px;
     bottom: 197.21px;
    
+  
 }
+svg{
+  margin-left: -52.07px; /*discrepancy of 10px from the original design*/
+  /*solution will be provided in the future*/
+} 
+
+
+
+
+
 .hidden{
     display : none;
 }
@@ -81,6 +96,19 @@ main{
     margin-bottom: 18px;
     padding-bottom: 19px;
    
+}
+.answer__wrapper{
+    width : 319px;
+    border : 1px solid blue;
+    margin-bottom: 18px;
+    margin-top: 13px;
+    /*typography directly copied from figma*/
+    color: #787887;
+    font-family: "Kumbh Sans Sans-serif";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
 }
 h2{
     margin-bottom: 45px;
