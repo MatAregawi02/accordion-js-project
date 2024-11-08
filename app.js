@@ -13,7 +13,7 @@ for (down of downArrows){
     counter_arrow++;
 }
 let counter_container = 1;
-for (answer of faqContainer){
+for (let answer of faqContainer){
     answer.id = `answer-${counter_container}`;
     counter_container++;
 }
@@ -23,25 +23,35 @@ let thirdAnswer = document.getElementById("answer-3");
 let fourthAnswer = document.getElementById("answer-4");
 let fifthAnswer = document.getElementById("answer-5");
 
+
 console.log(faqContainer);
+let buttonClick = 0;
 downArrows.forEach(downArrow => {//allows us to iterate to the node list
-    downArrow.addEventListener("click",function(){ //operates on a single element, so we need a loop
-        if (downArrow.id === "downArrow-1"){
-            firstAnswer.classList.toggle("hidden");
+    downArrow.addEventListener("click",function(event){ //operates on a single element, so we need a loop
+       faqContainer.forEach(function(myAnswer){
+          myAnswer.classList.add("hidden");
+       });
+       let touchedArrow = event.target;
+    if (touchedArrow.id == "downArrow-1"){
+            firstAnswer.classList.remove("hidden");
+       }
+    else if (touchedArrow.id == "downArrow-2"){
+            secondAnswer.classList.remove("hidden");
+       }
+    else if (touchedArrow.id == "downArrow-3"){
+        thirdAnswer.classList.remove("hidden");
         }
-        else if (downArrow.id === "downArrow-2"){
-            secondAnswer.classList.toggle("hidden");
-        }
-        else if (downArrow.id === "downArrow-3"){
-            thirdAnswer.classList.toggle("hidden");
-        }
-        else if (downArrow.id === "downArrow-4"){
-            fourthAnswer.classList.toggle("hidden");
-        }
-        else if (downArrow.id === "downArrow-5"){
-            fifthAnswer.classList.toggle("hidden");
-        }
+    else if (touchedArrow.id == "downArrow-4"){
+              fourthAnswer.classList.remove("hidden");
+    }
+    else if (touchedArrow.id == "downArrow-5"){
+            fifthAnswer.classList.remove("hidden");
+            
+   }
         
        
+  
+       
     });
+    
 });
